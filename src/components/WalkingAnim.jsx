@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Ground from './Ground';
 import Player from './Player';
 import styled from 'styled-components';
@@ -10,7 +10,7 @@ const AnimBox = styled.div`
   width: 600px;
   height: 600px;
   transform-origin: 0px 600px;
-  clip-path: polygon(0 300px, 0 599px, 600px 599px, 600px 300px);
+  clip-path: polygon(0 300px, 0 600px, 600px 600px, 600px 300px);
 `;
 
 const WalkingAnim = () => {
@@ -19,6 +19,9 @@ const WalkingAnim = () => {
     utils.fitToWindow(animBoxRef);
     const fitAnimBoxtoWindow = () => utils.fitToWindow(animBoxRef);
     window.addEventListener('resize', fitAnimBoxtoWindow)
+    return () => {
+      window.removeEventListener('resize', fitAnimBoxtoWindow)
+    }
   })
 
   return (

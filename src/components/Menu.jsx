@@ -4,7 +4,6 @@ import MenuButton from './MenuButton';
 
 const Curtain = styled.div`
   position: fixed;
-  height: 100%;
   width: 100%;
   z-index: 0;
   background-color: transparent;
@@ -18,11 +17,11 @@ const MenuContainer = styled.div`
   background-color: white;
   position: fixed;
   height: 100%;
-  width: 300px;
+  width: ${window.innerWidth > 600 ? 300 : Math.min(window.innerWidth)}px;
   top: 0;
   z-index: 10;
   transition-duration: 500ms;
-  left: -300px;
+  left: ${window.innerWidth > 600 ? -300 : -Math.min(window.innerWidth)}px;
   box-shadow: none;
   ${(props) => props.toggled && css`
     left: 0;
@@ -61,7 +60,9 @@ const Menu = () => {
 
   return (
     <Curtain toggled={toggled}>
-      <MenuContainer ref={menuContainer} toggled={toggled} />
+      <MenuContainer ref={menuContainer} toggled={toggled}>
+        <div>이게 메뉴냐</div>
+      </MenuContainer>
       <MenuButton ref={menuButton} onClick={(toggled) => setToggled(toggled)} />
     </Curtain>
   )

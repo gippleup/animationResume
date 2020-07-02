@@ -1,5 +1,5 @@
 const fitToWindow = (targetRef) => {
-  const fullWidth = window.innerWidth;
+  const fullWidth = Math.min(window.screen.width,window.innerWidth);
   // const fullHeight = window.innerHeight;
   const curWidth = targetRef.current.clientWidth;
   const scaleForFitWidth = fullWidth / curWidth;
