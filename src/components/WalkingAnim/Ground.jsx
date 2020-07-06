@@ -2,7 +2,7 @@ import React from 'react';
 import lottie from 'lottie-web';
 import groundAnim from './Ground/walkingScene1.json'
 import styled from 'styled-components';
-import utils from './AnimUtils/utils';
+import utils from '../AnimUtils/utils';
 import stylePropType from 'react-style-proptype';
 
 const GroundContainer = styled.div`

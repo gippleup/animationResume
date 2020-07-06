@@ -5,12 +5,12 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const ButtonContainer = styled.div`
-  position: absolute;
-  width: 60px;
-  height: 60px;
+  position: fixed;
+  width: 40px;
+  height: 40px;
   left: 10px;
   top: 10px;
-  margin: 0;
+  margin: 10px;
   border: 0;
   outline: 0;
   z-index: 20;
@@ -21,7 +21,6 @@ const MenuButton = React.forwardRef(function ({onClick}, ref) {
   const toggled = React.useRef(false); // toggled means arrow shape;
   const prevAnim = React.useRef('toggle');
   const curAnim = React.useRef('complete');
-  
 
   const toggleCurAnim = () => curAnim.current = curAnim.current === 'complete' ? 'toggle' : 'complete';
   const updatePrevAnim = () => prevAnim.current = curAnim.current;

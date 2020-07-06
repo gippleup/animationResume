@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 import * as lottie from 'lottie-web';
 import walkingAnimData from './Player/walking.json';
 import styled from 'styled-components';
-import utils from './AnimUtils/utils';
+import utils from '../AnimUtils/utils';
 import stylePropTypes from 'react-style-proptype';
 
 
