@@ -1,6 +1,6 @@
 import React from 'react';
-import Ground from './Ground';
-import Player from './Player';
+import Ground from './WalkingAnim/Ground';
+import Player from './WalkingAnim/Player';
 import styled from 'styled-components';
 import utils from './WalkingAnim/utils';
 
